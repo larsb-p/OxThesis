@@ -1,0 +1,110 @@
+\begin{savequote}[8cm]
+\textlatin{Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...}
+
+There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
+  \qauthor{--- Cicero's \textit{de Finibus Bonorum et Malorum}}
+\end{savequote}
+
+\chapter{\label{ch:neutrino_oscillations}Neutrino Oscillations} 
+
+\minitoc
+
+\section{2-Neutrino Paradigm}
+\label{sec:2-nu-paradigm}
+The change of basis-matrix from the neutrino flavour eigenstate basis with two states $\ket{\nu_\alpha}$ and $\ket{\nu_\beta}$ to the neutrino mass eigenstate basis with states $\ket{\nu_1}$ and $\ket{\nu_2}$ describes a counter-clockwise rotation of a vector by mixing angle $\theta_{12}$:
+%
+\begin{align} \label{eq:2_by_2_rotation}
+\begin{pmatrix}
+    \cos(\theta_{12}) & \sin(\theta_{12}) \\
+    \sin(\theta_{12}) & \cos(\theta_{12}) \\
+\end{pmatrix}
+\end{align}
+%
+The time evolution of a quantum-mechanical state is given by the Schr\"odinger equation
+%
+\begin{align} \label{eq:SG_eq}
+    i \frac{\text{d}}{\text{dt}} \ket{\psi(t)} = \hat{H} \ket{\psi(t)} = E \ket{\psi(t)}
+\end{align}
+%
+where the energy $E$ is the eigenvalue of the Hamiltonian operator $\hat{H}$ and with solution
+%
+\begin{align} \label{eq:SG_eq_solution}
+    \ket{\psi(t)} = e^{-i \hat{H} t} \ket{\psi}(0) \quad \text{.}
+\end{align}
+%
+Using eqs. (\ref{eq:2_by_2_rotation} and \ref{eq:SG_eq_solution}), the projection of neutrino flavour eigenstate $\ket{\nu_\alpha(t)}$ at time $t$ onto state $\beta$ at time $t=0$ is given by
+%
+\begin{align} \label{eq:nu_alpha_beta_projection}
+    \braket{\nu_\beta(0)|\nu_\alpha(t)} = \sin{(\theta_{12})}\cos{(\theta_{12})} \left( e^{-iE_2t - e^{-i E_1t}} \right) \quad \text{.}
+\end{align}
+%
+Irrespective of the particular choice of the Hamiltonian\footnote{Common choices for the Hamiltonian are $\hat{H}_1 = \frac{1}{2E}\begin{pmatrix}
+    m^2_1 & 0 \\
+    0 & m^2_2 \\
+\end{pmatrix}$ or $\hat{H}_2 = \frac{\Delta m^2}{4E}\begin{pmatrix}
+    -1 & 0 \\
+    0 & 1 \\
+\end{pmatrix}$. Additive constants do not change the probability.} the neutrino oscillation probability is given by absolute square of the amplitude (\ref{eq:nu_alpha_beta_projection}):
+%
+\begin{align} \label{eq:2_flavour_nu_osc_prob}
+    P_{\nu_\alpha \rightarrow \nu_\beta} (t) = \left|\braket{\nu_\beta(0)|\nu_\alpha(t)} \right|^2 = \sin^2(2\theta_{12}) \sin^2\left(\frac{\Delta m ^2}{4E}t\right) \quad \text{.}
+\end{align}
+%
+In complete analogy to the computation above, the neutrino oscillation probability in the $3$-neutrino paradigm can be computed and is given by
+%
+\begin{align} \label{eq:3_flavour_nu_osc_prob}
+    P_{\nu_\mu \rightarrow \nu_e} (t) = ... \quad \text{.}
+\end{align}
+%
+The neutrino oscillation probability in \cref{eq:2_flavour_nu_osc_prob} can also be obtained in the density matrix formalism by computing the trace of the product of the density matrices  $\hat{\rho}_\alpha(t)$ and $\hat{\rho}_\beta(0)$ describing an ensamble of neutrinos of flavour $\beta$ at time $t=0$ and flavour $\alpha$ at time $t$, see \cref{eq:open_sys_osc_prob}. In order to find the time-evolved density matrix $\hat{\rho}_\alpha(t)$, there are several methods to do it. The time-evolution of a density operator is given by the Liouville-von Neumann equation: 
+%
+\begin{align} \label{eq:von_Neumann-eq}
+    \dot{\hat{\rho}} = -i [\hat{H},\hat{\rho} ] \ \text{.}
+\end{align}
+%
+Solving \cref{eq:von_Neumann-eq} by integration gives
+%
+\begin{align} \label{eq:rho_alpha_t}
+    \hat{\rho}^\text{(m)}_\alpha(t) =
+    \begin{pmatrix}
+        \cos^2(\theta_{12}) & \sin(\theta_{12})\cos(\theta_{12})e^{i\frac{\Delta m^2}{2E}t} \\
+        \sin(\theta_{12})\cos(\theta_{12})e^{-i\frac{\Delta m^2}{2E}t} & \sin^2(\theta_{12}) \\
+    \end{pmatrix}
+\end{align}
+%
+Note, \cref{eq:rho_alpha_t} can also be obtained by time-evolving the density matrix
+%
+\begin{align} \label{eq:rho_alpha_0}
+    \hat{\rho}^\text{(m)}_\alpha(0) = \ket{\nu^\text{(m)}_\alpha(0)} \bra{\nu^\text{(m)}_\alpha(0)} =
+    \begin{pmatrix}
+        \cos^2(\theta_{12}) & \sin(\theta_{12})\cos(\theta_{12}) \\
+        \sin(\theta_{12})\cos(\theta_{12}) & \sin^2(\theta_{12}) \\
+    \end{pmatrix}
+\end{align}
+%
+using the time evolution operator $\hat{U}(t)=e^{-i\hat{H}t}$, i.e. by 
+%
+\begin{align} \label{eq:rho_alpha_time_evolution}
+    \hat{\rho}^\text{(m)}_\alpha(t) = \hat{U}(t) \hat{\rho}^\text{(m)}_\alpha(0) \hat{U}^\dagger(t) \ \text{,}
+\end{align}
+%
+or by plugging in the time-evolved states into
+%
+\begin{align} \label{eq:rho_alpha_t_eq}
+    \hat{\rho}^\text{(m)}_\alpha(t) = \ket{\nu^\text{(m)}_\alpha(t)} \bra{\nu^\text{(m)}_\alpha(t)} \ .
+\end{align}
+%
+Rather than rotating the density matrix $\hat{\rho}^\text{(m)}_\alpha(t)$ into the flavour basis, \cref{eq:open_sys_osc_prob} can be directly evaluated in the mass eigenbasis\footnote{Since the Hamiltonian is diagonal in the mass eigenbasis, it is the more convenient choice for computing the probability.} as the neutrino oscillation probability is independent on the choice of basis:
+%
+\begin{align} \label{eq:2_flavour_open_qs_osc_prob}
+    Tr\left[\rho^\text{(m)}_\alpha(t)\rho^\text{(m)}_\beta(0)\right]
+    &=
+    Tr\left[\rho^\text{(m)}_\alpha(t) \ket{\nu^\text{(m)}_\beta(0)} \bra{\nu^\text{(m)}_\beta(0)} \right] \\
+    &=
+    \bra{\nu^\text{(m)}_\beta(0)} \rho^\text{(m)}_\alpha(t) \ket{\nu^\text{(m)}_\beta(0)} \\
+    &=
+    \sin^2(2\theta_{12}) \sin^2\left(\frac{\Delta m ^2}{4E}t\right)
+    \ \text{,}
+\end{align}
+%
+consistent with \cref{eq:2_flavour_nu_osc_prob}.

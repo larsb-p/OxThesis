@@ -1,8 +1,12 @@
 \begin{savequote}[8cm]
-\textlatin{Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...}
+{\frakfamily
+Daß ich erkenne, was die Welt \\
+Im Innersten zusammenhält
+}
 
-There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
-  \qauthor{--- Cicero's \textit{de Finibus Bonorum et Malorum}}
+So that I know what holds\\
+the innermost world together
+  \qauthor{--- Johann Wolfgang von Goethe \cite{goethe_faust}}
 \end{savequote}
 
 \chapter{\label{ch:1-intro}Introduction} 
@@ -10,26 +14,66 @@ There is no one who loves pain itself, who seeks after it and wants to have it, 
 \minitoc
 
 \section{Motivation}
+\cite{Kayser:2005cd}
+\acrfull{dune}
 
-The rapid advance of minimally-invasive cardiac procedures promises improvements in patient safety, procedure efficacy, and access to treatment.  While percutaneous coronary intervention (PCI) has become routine and highly effective \cite{bravata_systematic_2007}, catheter procedures in areas such as electrophysiology (EP) and valve replacement are still coming of age.  This progress is driven by demographics and the improvement in general cardiac care, as patients surviving initial cardiac events go on to require treatment for sequelae \cite{foot_demographics_2000}.  The growing need for advanced treatment is being answered by developments in catheter technology and procedures.  These tools are continually advancing to access and manipulate an ever-broader range of anatomy \cite{sousa_new_2005}.
+Unless otherwise stated, natural units $c=\hbar = 1$ are used in this thesis.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sagittis dolor at nulla feugiat, vitae iaculis est rutrum. Mauris eu sem eros. Sed id faucibus urna. In egestas eros et sapien egestas imperdiet. In hac habitasse platea dictumst. Phasellus vitae varius tortor. Mauris nec sollicitudin enim. Suspendisse molestie leo nec mauris molestie, nec imperdiet magna vehicula. Phasellus sodales tortor dui, a lacinia turpis congue at. Pellentesque mattis dui non libero commodo, at accumsan ex ultrices. Integer eget ex eget dui cursus euismod et accumsan felis. Nullam laoreet sodales dui, ut finibus elit varius a. Sed elementum orci quis libero ullamcorper, eget egestas enim convallis. Sed nibh libero, tincidunt ultricies nibh quis, lobortis placerat mauris. Maecenas at laoreet risus, nec dictum libero. Donec accumsan, orci eu tempus mattis, nisl arcu auctor turpis, ac sollicitudin justo orci nec nulla.
+% Brief general introduction specifying the purpose of your work
+\vspace{2mm}
+\section{Introduction} \label{introduction} \vspace{-3mm}
+%{\color{red} Do I need an introduction to DUNE and T2K?}
+The \acrfull{lbl} neutrino oscillation experiments \acrshort{dune} and \acrshort{t2k} aim to precisely measure the neutrino oscillation parameters, search for leptonic \acrshort{cp} violation, detect supernova-neutrinos and study neutrino interactions \cite{DUNE:2020ypp,T2K:2011qtm}. Mutual science goals in both experiments are complemented by ancillary programmes customised to the physics that either experiment is more sensitive to. \acrshort{dune} is proposed to leverage a wide-band neutrino beam in the $2$-$4$ GeV region operating on a $1300$ km baseline, whereas \acrshort{t2k}'s neutrinos have flux peak energies around $0.6$ GeV on a $295$ km baseline. The experimental baselines as well as muon-neutrino disappearance probabilities are visualised in \cref{fig:exps_logos}.
+%
+\begin{figure}[H]
+	%\begin{minipage}[b]{.47\textwidth}
+	%\includegraphics[width=\textwidth]{figures/dune_lbl_logo}
+    \begin{minipage}[b]{.46\textwidth}
+    \includegraphics[width=\textwidth]{figures/dune_lbl_logo_osc_prob}
+	\end{minipage}
+	%\begin{minipage}[b]{.51\textwidth}
+	%\includegraphics[width=\textwidth]{figures/T2K_lbl_logo.pdf}
+    \begin{minipage}[b]{.52\textwidth}
+    \includegraphics[width=\textwidth]{figures/T2K_lbl_logo_osc_prob}
+	\end{minipage}
+	\caption{The long-baseline neutrino oscillation experiments \acrshort{dune} and \acrshort{t2k}. Left: Figure adapted from \cite{web:dune_lbl}. Right: Figure adapted from \cite{web:t2k_lbl}.}
+	\label{fig:exps_logos}
+\end{figure}
+%
+The different experimental setups allow complementary investigations of quantum decoherence in its many possible manifestations. Quantum decoherence is a phenomenon that might stem from various physical occurrences in nature \cite{Farzan:2008zv}. The formalism described in this report outlines and analyses different ways in which quantum decoherence could manifest as modifications to standard neutrino oscillations. Quantum gravitational effects are expected to make spacetime fluctuate at microscopic length or high-energy scales, making it a stochastic medium for neutrino propagation. Such stochastic perturbations may, for example, result from neutrino-virtual black hole interaction scenarios. The coupling of neutrinos to these effects could cause a phase shift of neutrino waves and give rise to decoherence and damping of neutrino oscillations over distance. On the other hand, the same effect on the neutrino oscillation probability could be caused by an anti-proportionality relation of the decoherence strength with respect to energy. This may be the case for a scenario in which lightcone fluctuations give rise to a neutrino experiencing distortions on its path through spacetime \cite{Stuttard:2021uyw}. My project is to investigate  quantum decoherence signatures in neutrino oscillations and determine the sensitivity for measurements in \acrshort{dune} and \acrshort{t2k}.
 
-Nam eget sem sed ligula vehicula iaculis. In non arcu a nisl interdum gravida. Nam egestas erat non turpis sagittis vestibulum. Praesent est metus, facilisis eu commodo sed, sagittis et est. Duis scelerisque luctus erat, elementum pulvinar felis bibendum a. Morbi hendrerit rhoncus consectetur. Vestibulum nec odio finibus, blandit turpis eget, dignissim orci. Curabitur eu ligula auctor, porttitor nulla non, maximus turpis. Nunc sed quam at est varius interdum eu vitae odio. Vestibulum egestas dapibus nulla sit amet fermentum.
+\subsection{\texorpdfstring{\acrlong{lbl}}{TEXT} Neutrino Oscillation Experiments}\label{subsec:lbl_osc}
+%
+%\ohead{\ref{subsec:lbl_osc} \ \acrshort{lbl} Neutrino Oscillation Experiments}
+%
+After a neutrino is produced in a flavour eigenstate, quantum interference of neutrino mass and flavour eigenstates as it propagates leads to the conversion of one flavour into another, which is referred to as the phenomenon of neutrino oscillations. The motivation of the project presented in this report is to carry out new \acrfull{bsm} physics searches with respect to neutrino oscillations in the \acrfull{t2k} and the next-generation long-baseline neutrino experiment \acrfull{dune}.
+In the Standard Model of Particle Physics, the three generations (flavours) of neutrinos correspond to three weak interaction eigenstates $\ket{\nu_\alpha}$ of flavour $\alpha = \{\text{e},\mu,\tau\}$. As particles propagate in free space as eigenstates of the energy-momentum Hamiltonian, the basis of the weak interaction eigenstates can be related to the basis of mass propagation eigenstates $\ket{\nu_i}$ with $i=\{1,2,3\}$, each with mass $m_i$ by a unitary matrix. The most popular parametrisation of this unitary transformation matrix is the \acrfull{pmns} matrix is given by $U_{\alpha i}$ \cite{Kayser:2005cd}:
+\vspace{-2mm}%
+%
+\begin{align} \label{pmns}
+\ket{\nu_\alpha} =  U^\dagger_{\alpha i}\ket{\nu_i} \quad \Leftrightarrow \quad \ket{\nu_i} =  U_{\alpha i}\ket{\nu_\alpha} \quad 
+\text{with} \quad U_{\alpha i} =
+\begin{pmatrix}
+    U_{\text{e}1} & U_{\text{e}2} & U_{\text{e}3} \\
+    U_{\mu 1} & U_{\mu 2} & U_{\mu 3} \\
+    U_{\tau 1} & U_{\tau 2} & U_{\tau 3}
+\end{pmatrix}
+\end{align}
+%
+%The flavor-$\alpha$ fractions of the mass eigenstates are shown in \cref{fig:mass_hierarchy}.
+The neutrino oscillation parameters are extracted via the neutrino oscillation probability. %The probability for a neutrino of mass eigenstate $\nu_i$ to produce a charged lepton of flavor $\alpha$ resulting from a \acrfull{cc} interaction in a detector is given by $|U_{\alpha i}|^2$.
+The signal-only neutrino-event rate $R^\text{signal}_{\overset{\brobor}{\nu}_{\hspace{-1mm}\alpha} \rightarrow \overset{\brobor}{\nu}_{\hspace{-1mm}\beta}}$ for $\overset{\brobor}{\nu}_{\hspace{-1mm}\alpha} \hspace{-1mm} \rightarrow \hspace{-1mm} \overset{\brobor}{\nu}_{\hspace{-1mm}\beta}$ oscillations measurable in detectors is \cite{doi:10.1146/annurev-nucl-101917-020930}
+%
+%\begin{small}
+\vspace{-3mm}
+    \begin{align} \label{nu_osc_prob}
+        R^\text{signal}_{\overset{\brobor}{\nu}_{\hspace{-1mm}\alpha}\rightarrow\overset{\brobor}{\nu}_{\hspace{-1mm}\beta}}(p_\text{reco}) = \hspace{-1mm}\int\displaylimits_{E_\text{min}}^{E_\text{max}} \hspace{-1mm}\Phi_\alpha(E_\text{true}) \cdot \sum_{i,j} \sigma^i_\beta(E_\text{true}, p_\text{reco}) \cdot N_j \cdot \varepsilon_\beta(E_\text{true}, p_\text{reco}) \cdot P_{\overset{\brobor}{\nu}_{\hspace{-1mm}\alpha}\rightarrow\overset{\brobor}{\nu}_{\hspace{-1mm}\beta}}(E_\text{true}) \ ,
+%       N_\text{det} = \Phi(E_\text{true}) \sigma(E_\text{true})    \varepsilon(E_\text{true},E_\text{rec}) P_\text{osc}
+    \end{align}
+%\end{small}
+%\vspace{-2mm}%
+where the event rate is a function of the reconstructed kinematic variables $p_\text{reco} \equiv (E_\text{reco}, \mathbf{p}_\text{reco})$, $\Phi_\alpha$ is the neutrino flux of flavor $\alpha$, $\sigma^i_\beta$ is the cross section for a neutrino $\nu_\beta$ of flavor $\beta$ with the target nucleus for interaction $i$, $N_j$ is the number of target nuclei in the detector fiducial volume of type $j$, $\varepsilon_\beta$ is the detector efficiency for flavor $\beta$ and $P_{\alpha\rightarrow\beta}$ is the neutrino oscillation probability for a neutrino to change from flavor $\alpha$ to flavor $\beta$. In order to extract the neutrino oscillation probability via \cref{nu_osc_prob}, oscillation experiments predict and measure %the neutrino flux in their near, pre-oscillation detectors and determine 
+event rates using both near and far detectors. The near detector constrains the product of neutrino flux, cross section and detector response, which is then used to predict the event rate at the far detector, where oscillation effects are probed. Conversely using the same flux, cross section and detector property predictions, any deviation in the measured event rate at the far detector of an experiment from the expectation assuming the standard $3$$\times$$3$-\acrshort{pmns} formalism  might stem from an alternative neutrino oscillation probability and thus hints on new physics.
 
-Vestibulum ut neque urna. Ut nec odio lobortis, ultricies nulla quis, ultricies tellus. Nam ac iaculis sapien. Vivamus vitae risus id tortor interdum pellentesque. Quisque lorem lectus, sagittis vel metus et, sagittis finibus justo. Curabitur pulvinar odio tellus, eu vehicula est dictum eget. Morbi sed justo justo. Vivamus enim nibh, facilisis pretium luctus quis, ullamcorper quis ipsum. Pellentesque a mi a elit euismod malesuada.
-
-Vestibulum interdum est vel orci tincidunt auctor. Nunc tristique nulla nec blandit fermentum. Maecenas id libero ut justo dictum sodales. Nullam justo sapien, dignissim vel enim at, porta pharetra metus. Integer euismod quam eget ligula gravida euismod. Pellentesque commodo, quam sit amet bibendum tempor, nisi odio varius mauris, et accumsan justo ex sed nunc. Cras bibendum nibh ac dolor volutpat, non elementum orci pulvinar. Maecenas et porttitor nulla. Suspendisse sapien massa, dapibus at blandit et, rhoncus suscipit velit. Fusce molestie, velit eget sagittis suscipit, est libero aliquam libero, in iaculis mi tellus ac nunc.
-
-\section{Contribution}
-
-Sed in rhoncus lectus. Mauris vulputate purus non malesuada pulvinar. Curabitur ullamcorper hendrerit elit, id vulputate libero sagittis vel. Pellentesque ac faucibus est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer venenatis, nisl eleifend pellentesque consequat, sem tortor malesuada ante, ut tincidunt elit tortor sit amet nunc.
-
-Cras vehicula ipsum sit amet dui rutrum ultrices. Integer eu eleifend odio. Praesent tempor, libero id ullamcorper euismod, lectus diam lobortis mauris, id venenatis arcu sem vitae purus. Pellentesque luctus tristique metus quis mollis. Praesent ullamcorper neque velit, sed iaculis est convallis sit amet. Quisque nec massa ut magna lobortis imperdiet. Quisque rhoncus purus eget mollis aliquet. Donec vehicula viverra nisl, sed posuere turpis vulputate non. Donec malesuada, eros id interdum volutpat, ipsum orci luctus quam, non pulvinar urna ipsum eget purus. Nam hendrerit condimentum tristique.
-
-Proin metus velit, tempor at fringilla non, dictum eu felis. Proin volutpat enim ut fermentum aliquam. Nam dictum nisi eu nisl viverra fermentum. Pellentesque tristique arcu non orci congue faucibus. Fusce sit amet nisl fringilla, feugiat turpis vitae, eleifend ante. Suspendisse elementum, lectus non pulvinar bibendum, lectus massa faucibus turpis, vitae porta risus sem quis metus. Maecenas id sapien et dui lobortis imperdiet nec eu mi. Quisque porttitor tincidunt nisi, eget sagittis orci. Nunc mattis erat malesuada facilisis viverra. Maecenas sodales iaculis nisi vel tincidunt. Morbi aliquet nibh ac facilisis consectetur. In ultrices libero quis massa porttitor cursus. Quisque suscipit ac tortor eget aliquet. Ut eget lacus vel orci viverra maximus at at purus.
-
-Nam massa neque, varius nec suscipit id, cursus ac mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In hac habitasse platea dictumst. Vivamus facilisis nunc quis dictum consectetur. Sed congue sed magna non auctor. Vestibulum accumsan sit amet erat non congue. Sed at condimentum mi, sed scelerisque urna. Etiam tristique pulvinar rutrum. Donec semper nulla vitae rutrum semper. Maecenas ultrices nibh at orci sodales tincidunt sit amet vitae arcu. Curabitur interdum tincidunt ipsum, nec tincidunt nunc dapibus in. Nunc sit amet elementum massa, ut ornare lacus. Vivamus convallis fringilla erat, non suscipit sapien convallis eu. Nunc viverra lectus sit amet turpis viverra, eget iaculis purus rhoncus.
-
-Morbi eu lectus arcu. Sed fringilla dui ut magna commodo, a malesuada ante pellentesque. Donec ornare facilisis pellentesque. Nulla vitae fringilla velit. Nunc id tellus nisl. Maecenas pretium elit lectus, nec consectetur nunc vulputate et. Sed facilisis magna nec gravida hendrerit. Sed a cursus nisl, in rhoncus massa. Curabitur ut nibh interdum, tempor risus vel, scelerisque nibh. Mauris quis ipsum sed risus tempor convallis ut a eros.
-
+\subsection{New Physics Searches - Quantum Decoherence}\label{subsec:decoh}
+Alongside a non-exhaustive list of possible studies to search for new \acrfull{bsm} phyiscs, quantum decoherence has gained an increased popularity in recent years. Quantum Decoherence is a phenomenon that may stem from very differently motivated physical models (see a clearer outline of why this is in \cref{subsec:oqsf}) and hence enables phenomenological studies covering a wide range of new physics prospects. Besides numerous existing phenomenological studies on quantum decoherence effects in neutrino oscillations \cite{DeRomeri:2023dht,Barenboim:2024wdn,Gomes:2020muc} and existing upper limits and sensitivity studies in the IceCube Neutrino Observatory \cite{IceCube:2021tdn,ICECUBE:2023gdv} and \acrfull{km3net} neutrino observatories \cite{KM3NeT:2024jji}, this study presents the first experimental analysis for quantum decoherence with accelerator-born neutrinos, in particular from the \acrshort{t2k} and \acrshort{dune} experiment. If we consider neutrino oscillations as the quantum superposition of neutrino mass eigenstates and decoherence as the loss of coherence, then decoherence in the context of neutrino oscillations means that there is no sustained mixing of neutrino mass eigenstates. This decoherence effect is fundamentally different from wave-packet decoherence\footnote{Wave-packet decoherence is produced via the separation of the neutrino mass states over long distances due to their differing masses.} in the sense that it is induced by the environment that the neutrino propagates through rather than by the dispersion of wave packets.

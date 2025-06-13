@@ -411,7 +411,7 @@
 \usepackage{lmodern}
 \usepackage[LGR,TS1,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[greek,latin,english]{babel}
+\usepackage[english]{babel}
 \usepackage{csquotes}
 \hyphenpenalty=500
 \def\longs{{\fontencoding{TS1}\selectfont s}}
@@ -446,3 +446,36 @@
 % JEM: combine all of the commands you run before appendices start
 \newcommand{\startappendices}
   {\appendix\adjustmtc\noappendicestocpagenum\addappheadtotoc\appendixpage}
+
+\newcommand\brobor{%
+    \smash[b]{%
+        \raisebox{-0.3\height}{\scalebox{0.5}{\tiny(}}%
+        \raisebox{-0.4\height}{$\mkern-0.5mu\scriptstyle-\mkern-1.5mu$}%
+        \raisebox{-0.3\height}{\scalebox{0.5}{\tiny)}}%
+        }%
+    } % for bar in bracket over symbol
+
+\usepackage[acronym,nonumberlist]{glossaries}
+\makeglossaries
+\input{text/listofabbreviations}
+
+% Set to acronym style
+\glsaddall[types=\acronymtype]
+
+\newglossarystyle{customacronyms}
+{
+    \setglossarystyle{long3colheader}%
+    \renewcommand*{\glossaryheader}{}%  
+    \renewcommand{\glossentry}[2]{%
+        \textbf{\glsentryitem{##1}\glstarget{##1}{\glossentryname{##1}}}
+        & \glossentrydesc{##1}
+        & ##2
+            \tabularnewline}%
+}
+
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{braket}
+\usepackage{diagbox}
+\usepackage{subcaption}
+\usepackage{yfonts}
