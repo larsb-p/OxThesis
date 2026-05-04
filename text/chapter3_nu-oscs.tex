@@ -1,0 +1,264 @@
+\begin{savequote}[8cm]
+\textlatin{Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...}
+
+There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
+  \qauthor{--- Cicero's \textit{de Finibus Bonorum et Malorum}}
+\end{savequote}
+
+\chapter{\label{ch:neutrino_oscillations}Neutrino Oscillations} 
+
+\minitoc
+
+\section{Neutrinos In and Beyond the Standard Model}
+
+\section{Quantum Decoherence in Neutrino Oscillations}
+
+\subsection{Manifestations of Quantum Decoherence}
+
+\subsection{Phase-Perturbed Neutrinos}
+\textcolor{red}{Merge this with later section}.
+
+\subsection{Open Quantum Systems Formalism}
+
+\section{2-Neutrino Paradigm}
+\label{sec:2-nu-paradigm}
+The change of basis-matrix from the neutrino flavour eigenstate basis with two states $\ket{\nu_\alpha}$ and $\ket{\nu_\beta}$ to the neutrino mass eigenstate basis with states $\ket{\nu_1}$ and $\ket{\nu_2}$ describes a counter-clockwise rotation of a vector by mixing angle $\theta_{12}$:
+%
+\begin{align} \label{eq:2_by_2_rotation}
+\begin{pmatrix}
+    \cos(\theta_{12}) & \sin(\theta_{12}) \\
+    \sin(\theta_{12}) & \cos(\theta_{12}) \\
+\end{pmatrix}
+\end{align}
+%
+The time evolution of a quantum-mechanical state is given by the Schr\"odinger equation
+%
+\begin{align} \label{eq:SG_eq}
+    i \frac{\text{d}}{\text{dt}} \ket{\psi(t)} = \hat{H} \ket{\psi(t)} = E \ket{\psi(t)}
+\end{align}
+%
+where the energy $E$ is the eigenvalue of the Hamiltonian operator $\hat{H}$ and with solution
+%
+\begin{align} \label{eq:SG_eq_solution}
+    \ket{\psi(t)} = e^{-i \hat{H} t} \ket{\psi}(0) \quad \text{.}
+\end{align}
+%
+Using eqs. (\ref{eq:2_by_2_rotation} and \ref{eq:SG_eq_solution}), the projection of neutrino flavour eigenstate $\ket{\nu_\alpha(t)}$ at time $t$ onto state $\beta$ at time $t=0$ is given by
+%
+\begin{align} \label{eq:nu_alpha_beta_projection}
+    \braket{\nu_\beta(0)|\nu_\alpha(t)} = \sin{(\theta_{12})}\cos{(\theta_{12})} \left( e^{-iE_2t - e^{-i E_1t}} \right) \quad \text{.}
+\end{align}
+%
+Irrespective of the particular choice of the Hamiltonian\footnote{Common choices for the Hamiltonian are $\hat{H}_1 = \frac{1}{2E}\begin{pmatrix}
+    m^2_1 & 0 \\
+    0 & m^2_2 \\
+\end{pmatrix}$ or $\hat{H}_2 = \frac{\Delta m^2}{4E}\begin{pmatrix}
+    -1 & 0 \\
+    0 & 1 \\
+\end{pmatrix}$. Additive constants do not change the probability.} the neutrino oscillation probability is given by absolute square of the amplitude (\ref{eq:nu_alpha_beta_projection}):
+%
+\begin{align} \label{eq:2_flavour_nu_osc_prob}
+    P_{\nu_\alpha \rightarrow \nu_\beta} (t) = \left|\braket{\nu_\beta(0)|\nu_\alpha(t)} \right|^2 = \sin^2(2\theta_{12}) \sin^2\left(\frac{\Delta m ^2}{4E}t\right) \quad \text{.}
+\end{align}
+%
+In complete analogy to the computation above, the neutrino oscillation probability in the $3$-neutrino paradigm can be computed and is given by
+%
+\begin{align} \label{eq:3_flavour_nu_osc_prob}
+    P_{\nu_\mu \rightarrow \nu_e} (t) = ... \quad \text{.}
+\end{align}
+%
+The neutrino oscillation probability in \cref{eq:2_flavour_nu_osc_prob} can also be obtained in the density matrix formalism by computing the trace of the product of the density matrices  $\hat{\rho}_\alpha(t)$ and $\hat{\rho}_\beta(0)$ describing an ensamble of neutrinos of flavour $\beta$ at time $t=0$ and flavour $\alpha$ at time $t$, see \cref{eq:open_sys_osc_prob}. In order to find the time-evolved density matrix $\hat{\rho}_\alpha(t)$, there are several methods to do it. The time-evolution of a density operator is given by the Liouville-von Neumann equation: 
+%
+\begin{align} \label{eq:von_Neumann-eq}
+    \dot{\hat{\rho}} = -i [\hat{H},\hat{\rho} ] \ \text{.}
+\end{align}
+%
+Solving \cref{eq:von_Neumann-eq} by integration gives
+%
+\begin{align} \label{eq:rho_alpha_t}
+    \hat{\rho}^\text{(m)}_\alpha(t) =
+    \begin{pmatrix}
+        \cos^2(\theta_{12}) & \sin(\theta_{12})\cos(\theta_{12})e^{i\frac{\Delta m^2}{2E}t} \\
+        \sin(\theta_{12})\cos(\theta_{12})e^{-i\frac{\Delta m^2}{2E}t} & \sin^2(\theta_{12}) \\
+    \end{pmatrix}
+\end{align}
+%
+Note, \cref{eq:rho_alpha_t} can also be obtained by time-evolving the density matrix
+%
+\begin{align} \label{eq:rho_alpha_0}
+    \hat{\rho}^\text{(m)}_\alpha(0) = \ket{\nu^\text{(m)}_\alpha(0)} \bra{\nu^\text{(m)}_\alpha(0)} =
+    \begin{pmatrix}
+        \cos^2(\theta_{12}) & \sin(\theta_{12})\cos(\theta_{12}) \\
+        \sin(\theta_{12})\cos(\theta_{12}) & \sin^2(\theta_{12}) \\
+    \end{pmatrix}
+\end{align}
+%
+using the time evolution operator $\hat{U}(t)=e^{-i\hat{H}t}$, i.e. by 
+%
+\begin{align} \label{eq:rho_alpha_time_evolution}
+    \hat{\rho}^\text{(m)}_\alpha(t) = \hat{U}(t) \hat{\rho}^\text{(m)}_\alpha(0) \hat{U}^\dagger(t) \ \text{,}
+\end{align}
+%
+or by plugging in the time-evolved states into
+%
+\begin{align} \label{eq:rho_alpha_t_eq}
+    \hat{\rho}^\text{(m)}_\alpha(t) = \ket{\nu^\text{(m)}_\alpha(t)} \bra{\nu^\text{(m)}_\alpha(t)} \ .
+\end{align}
+%
+Rather than rotating the density matrix $\hat{\rho}^\text{(m)}_\alpha(t)$ into the flavour basis, \cref{eq:open_sys_osc_prob} can be directly evaluated in the mass eigenbasis\footnote{Since the Hamiltonian is diagonal in the mass eigenbasis, it is the more convenient choice for computing the probability.} as the neutrino oscillation probability is independent on the choice of basis:
+%
+\begin{align} \label{eq:2_flavour_open_qs_osc_prob}
+    Tr\left[\rho^\text{(m)}_\alpha(t)\rho^\text{(m)}_\beta(0)\right]
+    &=
+    Tr\left[\rho^\text{(m)}_\alpha(t) \ket{\nu^\text{(m)}_\beta(0)} \bra{\nu^\text{(m)}_\beta(0)} \right] \\
+    &=
+    \bra{\nu^\text{(m)}_\beta(0)} \rho^\text{(m)}_\alpha(t) \ket{\nu^\text{(m)}_\beta(0)} \\
+    &=
+    \sin^2(2\theta_{12}) \sin^2\left(\frac{\Delta m ^2}{4E}t\right)
+    \ \text{,}
+\end{align}
+%
+consistent with \cref{eq:2_flavour_nu_osc_prob}.
+
+\section{Computing the Time-Dependent Density Matrix}
+
+\subsection{General Case}
+
+
+\subsection{Phase-Perturbated Case}
+In order to evaluate \cref{eq:von_Neumann-eq}, we consider a basis spanned by neutrino effective mass states wherein $\hat{H}$ is diagonal
+%
+    \begin{align} \label{eq:diagonal_Hamiltonian}
+        \hat{D}_n 
+        =
+    \begin{pmatrix}
+        h_1 & 0 & 0 \\
+        0 & h_2 & 0 \\
+        0 & 0 & h_3 \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \Delta m^2_{12} & 0 & 0 \\
+        0 & 0 & 0 \\
+        0 & 0 & \Delta m^2_{32} \\
+    \end{pmatrix}   
+        \quad \text{,}
+    \end{align}
+%
+with $h_1 = \frac{\Delta m^2_{12}}{2E}$, $h_2 = 0$ and $h_3 = \frac{\Delta m^2_{32}}{2E}$. The first commutator in \cref{eq:lindblad-master-eq} then evaluates to
+%
+    \begin{align} \label{eq:Hamiltonian_commutator}
+        [\hat{H},\hat{\rho}(t)]
+        &=
+    \left[
+    \begin{pmatrix}
+        h_1 & 0 & 0 \\
+        0 & h_2 & 0 \\
+        0 & 0 & h_3 \\
+    \end{pmatrix}
+    ,
+    \begin{pmatrix}
+        \hat{\rho}_{11}(t) & \hat{\rho}_{12}(t) & \hat{\rho}_{13}(t) \\
+        \hat{\rho}_{21}(t) & \hat{\rho}_{22}(t) & \hat{\rho}_{23}(t) \\
+        \hat{\rho}_{31}(t) & \hat{\rho}_{32}(t) & \hat{\rho}_{33}(t) \\
+    \end{pmatrix}
+    \right] \\ \\
+    &=
+    \begin{pmatrix}
+        0 & \hat{\rho}_{12}(t)\Delta_{12} & \hat{\rho}_{13}(t)\Delta_{13} \\
+        \hat{\rho}_{21}(t)\Delta_{21} & 0 & \hat{\rho}_{23}(t)\Delta_{23} \\
+        \hat{\rho}_{31}(t)\Delta_{31} & \hat{\rho}_{32}(t)\Delta_{32} & 0 \\
+    \end{pmatrix}    
+        \quad \text{,}
+    \end{align}
+%
+where $\Delta_{ij}\equiv h_j - h_i$. 
+
+Compute decoherence matrix via  \cite{Coelho:2017byq}
+%
+    \begin{align} \label{eq:decoherence_operator}
+        \hat{\mathcal{D}}[\hat{\rho}_\alpha(t)] 
+        =
+        \sum_{n=1}^8\left( \{ \hat{\rho}_\alpha(t) , \hat{D}_n^\dagger \hat{D}_n \}_+ - 2 \hat{D}_n \hat{\rho}_\alpha(t) \hat{D}_n^\dagger \right)
+        \quad \text{,}
+    \end{align}
+%
+where the dissipator $\hat{\mathcal{D}}[\hat{\rho}_\alpha(t)]$ is constructed using a set of $N^2 -1$ operators $\hat{D}_n$, where $N$ is the dimension of the Hilbert space. In the basis of the simultaneous diagonalisation of the decoherence matrices $\hat{D}_n$ and the Hamiltonian $\hat{H}$, 
+%
+    \begin{align} \label{eq:diagonal_d_matrices}
+        \hat{D}_n 
+        =
+    \begin{pmatrix}
+        d_{n,1} & 0 & 0 \\
+        0 & d_{n,2} & 0 \\
+        0 & 0 & d_{n,3} \\
+    \end{pmatrix}
+        \quad \text{,}
+    \end{align}
+%
+where $d_{n,i}\in\mathbb{R}$ for $i=1,...,8$ for $N=3$. Direct evaluation of \cref{eq:decoherence_operator} gives
+%
+    \begin{align} \label{eq:decoherence_operator_eval}
+        \hat{\mathcal{D}}[\hat{\rho}_\alpha(t)] 
+        =
+        \sum_{n=1}^8
+        \begin{pmatrix}
+            0 & \hat{\rho}_{12}(t)\left(d_{n,1} - d_{n,2}\right)^2 & \hat{\rho}_{13}(t)\left(d_{n,1} - d_{n,3}\right)^2 \\
+            \hat{\rho}_{21}(t)\left(d_{n,1} - d_{n,2}\right)^2 & 0 & \hat{\rho}_{23}(t)\left(d_{n,2} - d_{n,3}\right)^2 \\
+            \hat{\rho}_{31}(t)\left(d_{n,1} - d_{n,3}\right)^2 & \hat{\rho}_{32}(t)\left(d_{n,2} - d_{n,3}\right)^2 & 0 \\
+        \end{pmatrix}
+        \quad \text{.}
+    \end{align}
+%
+The constant, positive-valued decoherence couplings in the off-diagonal elements in \cref{eq:decoherence_operator_eval} can be written as \cite{Coelho:2017byq}
+%
+    \begin{align} \label{eq:decoherence_couplings}
+        \Gamma_{ij} = \Gamma_{ji} 
+        =
+        \sum_{n=1}^8 \left(d_{n,i} - d_{n,j}\right)^2
+        \quad \text{,}
+    \end{align}
+%
+such that the dissipator term $\hat{\mathcal{D}}[\hat{\rho}_\alpha(t)]$ in the effective mass basis becomes
+%
+    \begin{align} \label{eq:decoherence_operator_eval_with_couplings}
+        \hat{\mathcal{D}}[\hat{\rho}_\alpha(t)] 
+        =
+        \sum_{n=1}^8
+        \begin{pmatrix}
+            0 & \hat{\rho}_{12}(t) \Gamma_{12} & \hat{\rho}_{13}(t)\Gamma_{13} \\
+            \hat{\rho}_{21}(t)\Gamma_{21} & 0 & \hat{\rho}_{23}(t)\Gamma_{23} \\
+            \hat{\rho}_{31}(t)\Gamma_{31} & \hat{\rho}_{32}(t)\Gamma_{32} & 0 \\
+        \end{pmatrix}
+        \quad \text{.}
+    \end{align}
+%
+
+The Lindlad-master \cref{eq:lindblad-master-eq} then evaluates to
+%
+\begin{align} \label{eq:lindblad-master-eq_eval}
+    \frac{\text{d}}{\text{d}t}{\hat{\rho}} = -i[\hat{H},\hat{\rho}] - \hat{\mathcal{D}}[\hat{\rho}]
+    =
+    \begin{pmatrix}
+        0 & \hat{\rho}_{12}(t)\left(-i\Delta_{12} - \Gamma_{12}\right) & \hat{\rho}_{13}(t)\left(-i\Delta_{13} - \Gamma_{13}\right) \\
+        \hat{\rho}_{21}(t)\left(-i\Delta_{21} - \Gamma_{12}\right) & 0 & \hat{\rho}_{21}(t)\left(-i\Delta_{23} - \Gamma_{23}\right) \\
+        \hat{\rho}_{31}(t)\left(-i\Delta_{31} - \Gamma_{31}\right) & \hat{\rho}_{32}(t)\left(-i\Delta_{32} - \Gamma_{32}\right) & 0 \\
+    \end{pmatrix}      
+    \ \text{.}
+\end{align}
+%
+Integration yields
+%
+\begin{align} \label{eq:rho_of_t}
+    \hat{\rho}_\alpha^{\text{(m)}}(t)
+    =
+    \begin{pmatrix}
+        0 & \hat{\rho}_{12,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{12} - \Gamma_{12}\right)t} & \hat{\rho}_{13,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{13} - \Gamma_{13}\right)t} \\
+        \hat{\rho}_{21,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{21} - \Gamma_{12}\right)t} & 0 & \hat{\rho}_{23,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{23} - \Gamma_{23}\right)t} \\
+        \hat{\rho}_{31,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{31} - \Gamma_{31}\right)t} & \hat{\rho}_{32,\alpha}^{\text{(m)}}(t)e^{\left(-i\Delta_{32} - \Gamma_{32}\right)t} & 0 \\
+    \end{pmatrix}      
+    \ \text{.}
+\end{align}
+%
+
+Now, 

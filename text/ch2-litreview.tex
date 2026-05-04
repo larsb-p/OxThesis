@@ -1,10 +1,17 @@
+\begin{savequote}[8cm]
+\textlatin{Phantasie ist wichtiger als Wissen, denn Wissen ist
+begrenzt.
+  \qauthor{--- Albert Einstein}}
+\end{savequote}
+
 \chapter{Quantum Decoherence}
+\minitoc
 %
 %\ohead{\rightmark}
 %
 %\ohead{\ref{subsec:decoh} New Physics Searches}
 %
-As it will be further explained in \cref{subsec:oqsf}, there are many phenomenological models in which quantum decoherence can manifest itself in neutrino oscillations.
+As it will be further explained in \Cref{subsec:oqsf}, there are many phenomenological models in which quantum decoherence can manifest itself in neutrino oscillations.
 
 \section{Phase-Perturbed Neutrinos}
 An illustrative picture is given by quantum-gravity motivated scenarios in which the neutrino propagates through a quantum-fluctuating spacetime (also called spacetime foam) and experiences stochastic perturbations in the form of an interaction with a \acrfull{vbh} state. Such \acrshort{vbh}s are the gravitational analogue to virtual electron-positron pairs in the context of vacuum polarisations in quantum electrodynamics \cite{QD_Stutt_Jens_2020}. The propagation of a neutrino mass state $\ket{\nu_j}$ by some distance $L$ is given by
@@ -17,7 +24,7 @@ An illustrative picture is given by quantum-gravity motivated scenarios in which
 where the time evolution operator is given by $\hat{U}(E_j, t) = e^{-i E_j t}$. In a $2\nu$-flavour paradigm, one can evaluate $E_k t = \frac{m_k^2 L}{2E}$, which results in the standard $2\nu$-flavour transition probability. Phase perturbations resulting from quantum decoherence effects described above then introduce a shift in phase $\delta \Phi_j$, which ultimately gives rise to the damping of the neutrino oscillation probability \cite{QD_Stutt_Jens_2020}:
 %
 \begin{align} \label{eq:nu_mass_propagation_perturbed}
-    \ket{\nu_k(L)} = e^{-i \frac{m_j^2 L}{2E} + \delta \phi_j t} \ket{\nu_j (0)}
+    \ket{\nu_k(L)} = e^{-i \left( \frac{m_j^2 L}{2E} + \delta \phi_j \right) t} \ket{\nu_j (0)}
 \end{align}
 %
 %
@@ -27,7 +34,7 @@ In quantum mechanics, the probability of the transition from one quantum mechani
     P_{\nu_\alpha\rightarrow \nu_\beta}(L) = \left|\braket{\nu_\alpha|\nu_\beta}\right|^2 = \sum_{k,j} U^{*}_{\alpha k}U_{\beta k}U_{\alpha j}U^{*}_{\beta j} e^{-i\frac{\Delta m^2_{kj} L}{2E}}
 \end{align}
 %
-In \cref{fig:qd_demo}, the effect of the neutrino experiencing decoherence due to a $\nu$-\acrshort{vbh} interaction on the oscillation probability (caluclated using \cref{eq:nu_flavour_osc_prob} in a $2\nu$-flavour paradigm) is shown.
+In \Cref{fig:qd_demo}, the effect of the neutrino experiencing decoherence due to a $\nu$-\acrshort{vbh} interaction on the oscillation probability (caluclated using \Cref{eq:nu_flavour_osc_prob} in a $2\nu$-flavour paradigm) is shown.
 %
     \begin{figure}[H]
 	\centering
@@ -37,6 +44,27 @@ In \cref{fig:qd_demo}, the effect of the neutrino experiencing decoherence due t
     \end{figure}
 %
 As one can see, the stochastic perturbations of individual neutrinos result in a damping of the oscillation probability when considering the ensemble of multiple phase-perturbed neutrinos.
+
+Vacuum oscillation probability with damping from phase-perturbed quantum decoherence effects \cite{BalieiroGomes:2018gtd}:
+%
+\begin{align} \label{eq:osc_prob_phase_perturbed_damping}
+    P_{\nu_\alpha\rightarrow \nu_\beta}(L)
+    =
+    \delta_{\alpha\beta} - 2 \sum_{j>k}\Re \left[ U_{\beta j}
+    U^{*}_{\alpha j}
+    U_{\alpha k}
+    U^{*}_{\beta k}\right]\left[ 1 - \cos \left(\frac{\Delta m^2_{kj} L}{2E}\right) 
+    e^{-\Gamma_{jk}(E)L}
+    \right]
+    +
+    2 \sum_{j>k}\Im \left[ U_{\beta j}
+    U^{*}_{\alpha j}
+    U_{\alpha k}
+    U^{*}_{\beta k}\right]\cos \left(\frac{\Delta m^2_{kj} L}{2E}\right) 
+    e^{-\Gamma_{jk}(E)L}
+\end{align}
+%
+
 %\vspace{-4mm}
 \section{Open Quantum Systems Formalism}\label{subsec:oqsf} 
 %
@@ -49,23 +77,24 @@ In the following, quantum decoherence is described in the open quantum systems f
     \rho = \sum_j p_j \ket{\psi_j}\bra{\psi_j} \ .
 \end{align}
 %
-The transition probability from neutrino flavour $\alpha$ to $\beta$ is then given by
+The transition probability from neutrino flavour $\alpha$ described by density matrix $\hat{\rho}_\alpha(t)$ to $\beta$ is then given by
 \vspace{-3mm}%
 \begin{align} \label{eq:open_sys_osc_prob}
-    P_{\nu_\alpha\rightarrow \nu_\beta}(L) = Tr[\hat{\rho}_\alpha(t)\hat{\rho}_\beta(0)] \ .
+    P_{\nu_\alpha\rightarrow \nu_\beta}(L) = Tr[\hat{\rho}_\alpha(t)\hat{\rho}_\beta(0)] \ ,
 \end{align}
 %
-In order to find $\rho(t)$ in \cref{eq:open_sys_osc_prob}, the time evolution of that system subject to the system experiencing a new physics effect is given by the Lindblad master equation \cite{Lindblad:1975ef}:
-\vspace{-3mm}%
-\begin{align} \label{lindblad-master-eq}
-    \dot{\rho} = -i[H,\rho] - \mathcal{D}[\rho] \ \text{,}
+where $\hat{\rho}_\beta(0)=\ket{\nu_\beta}\bra{\nu_\beta}$ is the projection operator onto the flavour state $\nu_\beta$. In order to find $\rho(t)$ in \Cref{eq:open_sys_osc_prob}, the time evolution of that system subject to the system experiencing a new physics effect is given by the Lindblad master equation \cite{Lindblad:1975ef}:
+\vspace{-3mm}
+%
+\begin{align} \label{eq:lindblad-master-eq}
+    \dot{\hat{\rho}} = -i[\hat{H},\hat{\rho}] - \hat{\mathcal{D}}[\hat{\rho}] \ \text{,}
 \end{align}
 %
-which is an extension of the Liouville–von Neumann equation $\dot{\rho} = -i[H,\rho]$ that describes the time evolution of a density matrix in quantum mechanics. In \cref{lindblad-master-eq}, the new physics lives in the decoherence operator $\mathcal{D}[\rho]$.
+which is an extension of the Liouville–von Neumann equation $\dot{\rho} = -i[H,\rho]$ that describes the time evolution of a density matrix in quantum mechanics. In \Cref{eq:lindblad-master-eq}, the new physics lives in the decoherence operator $\mathcal{D}[\rho]$.
 The decoherence operator is expressed as a linear combination\footnote{Note that the same result for $\mathcal{D}[\rho]$ can be obtained using the Lindblad form \cite{Farzan:2008zv} $D[\rho] = \sum_n \left[ \{ \rho, D_n^\dagger D_n \} - 2 D_n \rho D_n^\dagger \right]$, where $D_n$ are some general complex matrices.}
 \vspace{-3mm}
 %
-\begin{align} \label{decoherence-operator}
+\begin{align} \label{eq:decoherence-operator}
    \mathcal{D}[\rho] = (D_{\mu\nu}\rho^\nu)b^\mu \ ,
 \end{align}
 %
@@ -86,22 +115,292 @@ where $b^\mu$ is the choice of basis, for instance the Gell-Mann matrices and $D
 \end{align}
 %
 whose elements are the free parameters of the system. The diagonal parameters $\Gamma_\mu$ and the off-diagonal elements $\beta_{\mu\nu}$ are real scalars. In order to determine $\mathcal{D}[\rho]$, $D_{\mu\nu}$ is projected onto the density matrix coefficients\footnote{The density matrix coefficients $\rho^\nu$ are the basis expansion coefficients. In case of the Gell-Mann matrices as the basis, $\rho^\nu$ can be expanded as $ \rho(t) = \frac{1}{3}\rho_0(t) b^0 + \frac{1}{2}\sum_{i=1}^8\rho_i(t) b^i$ \cite{Buoninfante:2020iyr}.}, giving the coefficients $c_\mu = D_{\mu\nu}\rho^\nu$ for the basis expansion $\mathcal{D}[\rho] = c_\mu b^\mu$. 
-By imposing general assumptions such as unitarity of the system, positivity of time evolution, entropy increase and energy conservation \cite{DeRomeri:2023dht} on the decoherence matrix in \cref{decoherence-matrix}, it can be reduced to being dependent on a single parameter $\Gamma$. Examples of some explicit forms of $D$ \cite{QD_Stutt_Jens_2020} are shown in \cref{fig:qg_deco_models}:
+By imposing general assumptions such as unitarity of the system, positivity of time evolution, entropy increase and energy conservation \cite{DeRomeri:2023dht} on the decoherence matrix in \Cref{decoherence-matrix}, it can be reduced to being dependent on a single parameter $\Gamma$. Examples of some explicit forms of $D$ \cite{QD_Stutt_Jens_2020} are shown in \Cref{fig:qg_deco_models}:
 %
     \begin{figure}[H]
 	\centering
     \includegraphics[width=1.\textwidth]{figures/qg_deco_models.pdf}
-	\caption{Different models correspond to different decoherence matrices \cite{QD_Stutt_Jens_2020}. The neutrino-\acrshort{vbh} interaction induces left: a shift in phase, center: a neutrino flavour or mass eigenstate to be democratically selected or right: the neutrino to get lost.}
+	\caption{Different models correspond to different decoherence matrices \cite{QD_Stutt_Jens_2020}. The neutrino-\acrshort{vbh} interaction induces (left) a shift in phase, (center) a neutrino flavour or mass eigenstate to be democratically selected or (right) the neutrino to get lost.}
 	\label{fig:qg_deco_models}
     \end{figure}
 %
-A power-law energy dependence of the physics producing the decoherence effects can be introduced in this parameter by \cite{QD_Stutt_Jens_2020}
+
+In order to find the explicit form of the decoherence matrix, let's evaluate \Cref{eq:decoherence_operator} using the Gell-Mann matrices:
+%
+\begin{align} \label{eq:gell_mann_matrices}
+    b_0 &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}, \quad
+    b_1 = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad
+    b_2 = \begin{pmatrix} 0 & -i & 0 \\ i & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \\
+    b_3 &= \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 0 \end{pmatrix}, \quad
+    b_4 = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{pmatrix}, \quad
+    b_5 = \begin{pmatrix} 0 & 0 & -i \\ 0 & 0 & 0 \\ i & 0 & 0 \end{pmatrix}, \\
+    b_6 &= \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}, \quad
+    b_7 = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & -i \\ 0 & i & 0 \end{pmatrix}, \quad
+    b_8 = \frac{1}{\sqrt{3}} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{pmatrix}
+        \quad \text{.}
+\end{align}
+%
+The coefficients $(D_{\mu\nu}\rho^\nu)$ of the decoherence operator in \Cref{eq:decoherence_operator} are given by the vector
+%
+\begin{align} \label{eq:deco_operator_coefficients}
+    D_{\mu\nu}\rho^\nu
+    = 
+\begin{pmatrix}
+\Gamma_0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & \Gamma_1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \Gamma_2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & \Gamma_3 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \Gamma_4 & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 0 & \Gamma_5 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & \Gamma_6 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & \Gamma_7 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \Gamma_8
+\end{pmatrix}
+%
+    \begin{pmatrix}
+    \rho_0(t) \\ \rho_1(t) \\ \rho_2(t) \\ \rho_3(t) \\ \rho_4(t) \\ \rho_5(t) \\ \rho_6(t) \\ \rho_7(t) \\ \rho_8(t)    
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    \Gamma_0 \rho_0(t) \\ \Gamma_1 \rho_1(t) \\ \Gamma_2 \rho_2(t) \\ \Gamma_3 \rho_3(t) \\ \Gamma_4 \rho_4(t) \\ \Gamma_5 \rho_5(t) \\ \Gamma_6 \rho_6(t) \\ \Gamma_7 \rho_7(t) \\ \Gamma_8 \rho_8(t)   
+    \end{pmatrix}
+    \quad \text{,}
+\end{align}
+%
+
+Any $3 \times 3$ Hermitian matrix with trace $1$ can be expanded in Gell-Mann matrices basis
+%
+\begin{align} \label{eq:deco_operator_expansion}
+   \mathcal{D}[\hat{\rho}_{\tilde{\text{m}}}(t)]
+   &= (D_{\mu\nu}\rho^\nu(t))b^\mu
+   =
+   \frac{1}{3} (D_{0\nu}\rho^\nu(t)) \underline{\underline{b^0}} + \frac{1}{2} \sum_{i=1}^8 (D_{i\nu}\rho^\nu(t)) \underline{\underline{b^i}} \\
+   &\overset{(\ref{eq:deco_operator_coefficients})}{=}
+   \frac{1}{3} \Gamma_0\rho_0 \underline{\underline{b^0}} + \frac{1}{2} \left( \Gamma_1 \rho_1 \underline{\underline{b^1}} + \cdots + \Gamma_8 \rho_8 \underline{\underline{b^8}} \right) \\
+   &= \frac{1}{2}
+        \begin{pmatrix}
+            \frac{2}{3}\Gamma_0 \rho_0 + \Gamma_3 \rho_3 + \frac{1}{\sqrt{3}} \Gamma_8 \rho_8  & \Gamma_1 \rho_1 - i \Gamma_2 \rho_2 & \Gamma_4 \rho_4 - i \Gamma_5 \rho_5 \\
+            \Gamma_1 \rho_1 + i \Gamma_2 \rho_2 & \frac{2}{3}\Gamma_0 \rho_0 - \Gamma_3 \rho_3 + \frac{1}{\sqrt{3}} \Gamma_8 \rho_8  & \Gamma_6 \rho_6 - i \Gamma_7 \rho_7 \\
+            \Gamma_4 \rho_4 + i \Gamma_5 \rho_5 & \Gamma_6 \rho_6 + i \Gamma_7 \rho_7 & \frac{2}{3}\Gamma_0 \rho_0 - \frac{2}{\sqrt{3}} \Gamma_8 \rho_8 \\
+        \end{pmatrix}
+\end{align}
+%
+The coefficients of the density matrix coefficients vector in \Cref{eq:deco_operator_coefficients} can be related to the actual density matrix
+%
+\begin{align} \label{eq:density_matrix}
+   \hat{\rho}_{\tilde{\text{m}}}(t) = 
+        \begin{pmatrix}
+            \hat{\rho}_{11}(t) & \hat{\rho}_{12}(t) & \hat{\rho}_{13}(t) \\
+            \hat{\rho}_{21}(t) & \hat{\rho}_{22}(t) & \hat{\rho}_{23}(t) \\
+            \hat{\rho}_{31}(t) & \hat{\rho}_{32}(t) & \hat{\rho}_{33}(t) \\
+        \end{pmatrix}
+\end{align}
+%
+via the basis $b^\mu$ via
+%
+\begin{align} \label{eq:density_matrix_trace}
+   \rho_i = \text{Tr}[\hat{\rho}_{\tilde{\text{m}}}(t) \underline{\underline{b_i}}] \quad \text{.}
+\end{align}
+%
+The coefficients wrt to basis $b^\mu$ are then given by\footnote{Note: $\Re[\hat{\rho}_{ij}(t)] = \Re[\hat{\rho}_{ji}(t)]$ and $\Im[\hat{\rho}_{ij}(t)] = -\Im[\hat{\rho}_{ji}(t)]$.}
+
+%
+\begin{align}  \label{eq:density_matrix_0}
+    \rho_0(t) &= \text{Tr}[\hat{\rho}_{\tilde{\text{m}}}(t) \underline{\underline{b_0}}] = \hat{\rho}_{11}(t)+ \hat{\rho}_{22}(t) + \hat{\rho}_{33}(t) \\
+    \rho_1(t) &= \text{Tr}[\hat{\rho}_{\tilde{\text{m}}}(t) \underline{\underline{b_1}}] = \hat{\rho}_{12}(t)+ \hat{\rho}_{21}(t) = \hat{\rho}_{12}(t) + \hat{\rho}^*_{12}(t) = 2\Re[\hat{\rho}_{21}(t)] \\
+   \rho_2(t) &= \text{Tr}[\hat{\rho}_{\tilde{\text{m}}}(t) \underline{\underline{b_2}}] = -2 2\Im[\hat{\rho}_{21}(t)] \\
+   \rho_3(t) &= \hat{\rho}_{11}(t) - \hat{\rho}_{22}(t) \\
+   \rho_4(t) &= 2\Re[\hat{\rho}_{13}(t)] \\
+   \rho_5(t) &= -2i \Im[\hat{\rho}_{13}(t)] \\
+   \rho_6(t) &= 2\Re[\hat{\rho}_{23}(t)] \\
+   \rho_7(t) &= -2i \Im[\hat{\rho}_{23}(t)] \\
+   \rho_8(t) &= \frac{1}{\sqrt{3}} \left( \hat{\rho}_{11}(t) + \hat{\rho}_{22}(t) + \hat{\rho}_{33}(t) \right)
+\end{align}
+%
+Plugging in the density matrix elements $\rho_{\mu\nu}$ into the density vector elements $\rho_\mu$ in \Cref{eq:deco_operator_expansion}, gives the general form of the decoherence operator $\mathcal{D}[\hat{\rho}_{\tilde{\text{m}}}(t)]$ given a decoherence matrix $D_{\mu\nu}$ in \Cref{eq:deco_operator_coefficients} and the Gell-Mann matrices $b^\mu$ in the basis expansions:
+%
+\begin{align} \label{eq:deco_operator_general}
+   \mathcal{D}[\hat{\rho}_{\tilde{\text{m}}}(t)]
+   &=
+    \begin{pmatrix}
+        \Omega_0 + \Omega_3 + \Omega_8 & \Gamma_1 \Re[\hat{\rho}_{12}(t)] - i \Gamma_2 \Im[\hat{\rho}_{21}(t)] & \Gamma_4 \Re[\hat{\rho}_{13}(t)] - i \Gamma_5 \Im[\hat{\rho}_{31}(t)] \\
+        \Gamma_1 \Re[\hat{\rho}_{12}(t)] + i \Gamma_2 \Im[\hat{\rho}_{21}(t)] & \Omega_0 - \Omega_3 + \Omega_8  & \Gamma_6 \Re[\hat{\rho}_{23}(t)] + i \Gamma_7 \Im[\hat{\rho}_{23}(t)] \\
+        \Gamma_4 \Re[\hat{\rho}_{13}(t)] + i \Gamma_5 \Im[\hat{\rho}_{31}(t)] & \Gamma_6 \Re[\hat{\rho}_{23}(t)] - i \Gamma_7 \Im[\hat{\rho}_{23}(t)] & \Omega_0 - 2\Omega_8 \\
+    \end{pmatrix}
+\end{align}
+%
+with
+%
+\begin{align} \label{eq:Omegas}
+    \Omega_0 &= \frac{\Gamma_0}{3} ( \rho_{11} + \rho_{22} + \rho_{33} ) \\
+    \Omega_3 &= \frac{\Gamma_3}{2} ( \textcolor{red}{\rho_{11} - \rho_{22}} ) \\
+    \Omega_8 &= \frac{\Gamma_8}{6}  ( \rho_{11} + \rho_{22} - 2\rho_{33} )
+\end{align}
+%
+Also, look at \cite{Hellmann:2022cgt}
+
+\subsection{More details on QD OscProb Calculation}
+%
+\begin{align} \label{eq:deco_operator}
+    \dot{\rho} = -i[H,\rho] + \mathcal{D}[\rho] \ \ \ \text{where} \ \ \ \mathcal{D}[\rho] = \frac{1}{2}\sum^8_{j=1}\left( [V_j, \rho(t)V_j^\dagger] + [V_j \rho(t), V_j^\dagger] \right)
+\end{align}
+%
+
+%
+\begin{align} \label{eq:operator_basis_expansion}
+    = ... = h_i\rho_j f_{ij\mu} b^\mu + (D_{\mu\nu} \rho^\mu) b^\nu
+\end{align}
+%
+Basis expansions $H = h_\mu b^\mu$, $\rho = \rho_\mu b^\mu$, $A_j = a^{(j)}_\mu b^\mu$, commutation relations: $[b_i,b_j] = 2i f_{ijk}b_k$
+%
+\begin{align} \label{eq:deco_matrix}
+    D_{ij} = \frac{1}{2}\sum^8_{k,l,m=1}\left( \vec{a}^{(j)}_m \cdot \vec{a}^{(j)}_k \right) f_{iml} f_{lkj}
+\end{align}
+%
+
+%
+\begin{align} \label{eq:energy_conservation}
+    [V_j, H] = 0
+\end{align}
+%
+
+%
+\begin{align} \label{eq:hermeticity}
+    V_j = V_j^\dagger
+\end{align}
+%
+%
+\begin{align} \label{eq:unitarity}
+    D_{0l} = D_{k0} = 0
+\end{align}
+%
+%
+\begin{align} \label{eq:gamma_explicitly}
+    \Gamma_{31} \equiv \frac{1}{2} (\vec{a}_3 + \vec{a}_8 )^2 \quad \Gamma_{21} \equiv 2 \vec{a}^2 \quad \Gamma_{32} \equiv \frac{1}{2} (\vec{a}_3 - \vec{a}_8 )^2
+\end{align}
+%
+
+\subsection{Quantum Decoherence Models}
+Assuming the form of the quantum decoherence strength in \cref{gamma-parameter}, where the energy scale $n$ is assumed to take integer values, the energy scale governs the model:
+\begin{itemize}
+    \item $n\leq-10$: Gallium anomaly explanation? \cite{Farzan:2023fqa}
+    \item $n=-4$: Wave-packet separation \cite{DUNE:2020ypp,deGouvea:2021uvg}
+    \item $n = - 2$: Decoherence induced by lightcone fluctuations \cite{Stuttard:2021uyw}
+    \item $n = - 1$: Lorentz-invariance \cite{Lisi:2000zt}; Invisible neutrino decay \cite{Lindner:2001fx,Berryman:2014yoa}
+    \item $n = 0$: Energy-independent 
+    \item $n = 1$: Cross-section like; Violation of quantum mechanics \cite{Liu:1997km}
+    \item $n = 2$: Quantum-gravity motivated \cite{QD_Stutt_Jens_2020}
+\end{itemize}
+
+\subsection{Example Calculation of a Neutrino Oscillation Probability}
+Let's consider the electron- to muon-neutrino oscillation probability $P_{\nu_e\rightarrow\nu_\mu}$ in the phase-perturbation model with $D_\text{phase perturbation} = \text{diag}(0, \Gamma, \Gamma, 0, \Gamma, \Gamma, \Gamma, \Gamma, 0)$. The density matrix in the initial state is
+%
+\begin{align} \label{eq:matrix_gell_mann_expansion}
+    \hat{\rho}^\text{(f)}_{\mu\mu} = \ket{\nu_\mu}\bra{\nu_\mu} 
+    = 
+    \begin{pmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+    =
+    \frac{1}{3}\underline{\underline{b_0}} + \frac{1}{2} \left( - \underline{\underline{b_3}} + \frac{1}{\sqrt{3}} \underline{\underline{b_8}} \right)
+    \quad \text{,}
+\end{align}
+%
+giving a vector of coefficients of the density matrix $\rho$ expanded in basis $b^\mu$ of Gell-Mann matrices:
+%
+\begin{align} \label{eq:rho_coefficients}
+    \hat{\rho}^{\mu}
+    = 
+    \begin{pmatrix}
+    \frac{1}{3} \\ 0 \\ 0 \\ - \frac{1}{2} \\ 0 \\ 0 \\ 0 \\ 0 \\ \frac{1}{\sqrt{3}}    
+    \end{pmatrix}
+    \quad \text{,}
+\end{align}
+%
+Using a general form for the decoherence matrix $\text{diag}(\Gamma_0,\Gamma_1,\Gamma_2,\Gamma_3,\Gamma_4,\Gamma_5,\Gamma_6,\Gamma_7,\Gamma_8)$, the coefficients $D_{\mu\nu}\rho^\nu$ of the decoherence operator in \Cref{eq:decoherence_operator} evaluate to
+
+Evaluating \Cref{eq:decoherence_operator} yields
+
+(\ref{eq:gell_mann_matrices}), 
+
+
+
+\iffalse
+an ensemble of muon-neutrinos is then described by
+%
+\begin{align} \label{eq:rho_numu}
+    \hat{\rho}^\text{(f)}_{\mu\mu} = \ket{\nu_\mu}\bra{\nu_\mu} 
+    = 
+    \begin{pmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+    =
+    \frac{1}{3}\underline{\underline{b_0}} + \frac{1}{2} \left( - \underline{\underline{b_3}} + \frac{1}{\sqrt{3}} \underline{\underline{b_8}} \right)
+    \quad \text{,}
+\end{align}
+%
+giving a vector of coefficients of the density matrix $\rho$ expanded in basis $b^\mu$ of Gell-Mann matrices:
+%
+\begin{align} \label{eq:rho_coefficients}
+    \hat{\rho}^{\mu}
+    = 
+    \begin{pmatrix}
+    \frac{1}{3} \\ 0 \\ 0 \\ - \frac{1}{2} \\ 0 \\ 0 \\ 0 \\ 0 \\ \frac{1}{\sqrt{3}}    
+    \end{pmatrix}
+    \quad \text{,}
+\end{align}
+%
+Using a general form for the decoherence matrix $\text{diag}(\Gamma_0,\Gamma_1,\Gamma_2,\Gamma_3,\Gamma_4,\Gamma_5,\Gamma_6,\Gamma_7,\Gamma_8)$, the coefficients $D_{\mu\nu}\rho^\nu$ of the decoherence operator in \Cref{eq:decoherence_operator} evaluate to
+%
+\begin{align} \label{eq:deco_operator_coefficients}
+    D_{\mu\nu}\rho^\nu
+    = 
+\begin{pmatrix}
+\Gamma_0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & \Gamma_1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & \Gamma_2 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & \Gamma_3 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & \Gamma_4 & 0 & 0 & 0 & 0  \\
+0 & 0 & 0 & 0 & 0 & \Gamma_5 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & \Gamma_6 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & \Gamma_7 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \Gamma_8
+\end{pmatrix}
+%
+    \begin{pmatrix}
+    \frac{1}{3} \\ 0 \\ 0 \\ - \frac{1}{2} \\ 0 \\ 0 \\ 0 \\ 0 \\ \frac{1}{\sqrt{3}}    
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    \frac{1}{3} \Gamma_0 \\ 0 \\ 0 \\ - \frac{1}{2} \Gamma_3 \\ 0 \\ 0 \\ 0 \\ 0 \\ \frac{1}{\sqrt{3} \Gamma_8}
+    \end{pmatrix}
+    \quad \text{,}
+\end{align}
+%
+Evaluating \Cref{eq:decoherence_operator} yields
+%
+\begin{align} \label{eq:deco_operator_expansion}
+   \mathcal{D}[\rho] = (D_{\mu\nu}\rho^\nu)b^\mu
+   &=
+   \frac{1}{3}\Gamma_0\underline{\underline{b_0}} - \frac{1}{2} \Gamma_3 \underline{\underline{b_3}} + \frac{1}{\sqrt{3}} \Gamma_8 \underline{\underline{b_8}} \\
+   &=
+        \begin{pmatrix}
+            \frac{1}{3}\Gamma_0 - \frac{1}{2} \Gamma_3 + \frac{1}{\sqrt{3}} \Gamma_8  & 0 & 0 \\
+            0 & \frac{1}{3}\Gamma_0 + \frac{1}{2} \Gamma_3 + \frac{1}{\sqrt{3}} \Gamma_8  & 0 \\
+            0 & 0 & \frac{1}{3}\Gamma_0 - \frac{2}{3} \Gamma_8  \\
+        \end{pmatrix}  
+   \ ,
+\end{align}
+%
+\fi
+
+
+
+
+
+
+A power-law energy dependence of the physics producing the decoherence effects can be introduced in this parameter by \cite{Lisi:2000zt,Gomes:2020muc, Coloma:2018idr, QD_Stutt_Jens_2020}
 \vspace{-3mm}%
 \begin{align} \label{gamma-parameter}
    \Gamma(E_\nu;\Gamma(E_0), n) = \Gamma(E_0)\left( \frac{E_\nu}{E_0} \right)^n 
 \end{align}
-%
-and is characterised by the two free parameters $\Gamma(E_0)$ and $n$. In \cref{gamma-parameter}, the reference or pivot energy scale $E_0$ [GeV] is a non-physical parameter as it is not modifying the physics when being varied, but setting the magnitude of the decoherence strength parameter $\Gamma(E_0)$. The energy scale $n$ allows one to consider different phenomenological models dependent on the choice of $n$ (see \cref{tab:energy_scale_models}):
+and is characterised by the two free parameters $\Gamma(E_0)$ and $n$. In \Cref{gamma-parameter}, the reference or pivot energy scale $E_0$ [GeV] is a non-physical parameter as it is not modifying the physics when being varied, but setting the magnitude of the decoherence strength parameter $\Gamma(E_0)$. The energy scale $n$ allows one to consider different phenomenological models dependent on the choice of $n$ (see \Cref{tab:energy_scale_models}):
 %
 \begin{table}[hbt]
     \centering
@@ -136,7 +435,7 @@ and is characterised by the two free parameters $\Gamma(E_0)$ and $n$. In \cref{
 %
 \fi
 
-The oscillation probabilities calculated from the models illustrated in \cref{fig:qg_deco_models} are shown in \cref{fig:deimos_plots} for the case where $n=2$, $\Gamma = 9.48 \times 10^{-18}$ GeV and $E_0 = 1$ GeV. For the DUNE baseline of $1300$ km, the oscillation probabilities predicted by various quantum decoherence models differ significantly from the standard $3$$\times$$3$-\acrshort{pmns} neutrino oscillation probability. Considering the T$2$K baseline of $295$ km, these differences show up in the extrema and the high energy region of the oscillation probability.
+The oscillation probabilities calculated from the models illustrated in \Cref{fig:qg_deco_models} are shown in \Cref{fig:deimos_plots} for the case where $n=2$, $\Gamma = 9.48 \times 10^{-18}$ GeV and $E_0 = 1$ GeV. For the DUNE baseline of $1300$ km, the oscillation probabilities predicted by various quantum decoherence models differ significantly from the standard $3$$\times$$3$-\acrshort{pmns} neutrino oscillation probability. Considering the T$2$K baseline of $295$ km, these differences show up in the extrema and the high energy region of the oscillation probability.
 %
 \begin{figure}[hbt]
 	\begin{minipage}[b]{.52\textwidth}

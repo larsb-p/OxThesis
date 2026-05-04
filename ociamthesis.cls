@@ -85,7 +85,12 @@
 \usepackage[includehead,hmargin={3.6cm, 2.6cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
 \fi
 
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\definecolor{valencia}{RGB}{137,107,221}   % 896BDD
+\definecolor{susav}{RGB}{247,150,70}       % F79646
+\definecolor{martini}{RGB}{188,220,119}    % BCDC77
+\definecolor{empirical}{RGB}{110,181,243}  % 6EB5F3
+
 \usepackage{graphicx} 
 
 \usepackage{fancyhdr}
@@ -119,7 +124,7 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 
-\usepackage{longtable} 
+\usepackage{longtable}
 	% Allows tables to span multiple pages (this package must be called before hyperref)
 
 \usepackage[font=small,labelfont=bf]{caption} 
@@ -409,6 +414,8 @@
 
 % JEM: for crazy multi character set quotes and Unicode and all
 \usepackage{lmodern}
+%\usepackage{newtxtext}
+%\usepackage{helvet}
 \usepackage[LGR,TS1,T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -479,3 +486,6 @@
 \usepackage{diagbox}
 \usepackage{subcaption}
 \usepackage{yfonts}
+\usepackage{lscape}
+\usepackage{accents}
+\usepackage{siunitx}
