@@ -132,49 +132,106 @@ After $\nu_\mu$- and $\nu_e$-interactions are simulated and reconstructed in the
 %
 The available reconsructed \acrshort{mc} data samples in \acrshort{t2k} are the \acrfull{cc} muon neutrino and muon anti-neutrino pionless ($\nu_\mu$\acrshort{cc}$0\pi$ and $\bar{\nu}_\mu$\acrshort{cc}$0\pi$), \acrlong{cc} electron neutrino and electron anti-neutrino pionless ($\nu_e$\acrshort{cc}$0\pi$ and $\bar{\nu}_e$\acrshort{cc}$0\pi$) and the %hybrid\footnote{Here, 'hybrid samples' refer to data-driven \acrshort{mc} samples that are constructed by modifying real atmospheric neutrino data events in \acrshort{sk} to resemble certain types of signal events, in this case, $\nu_\mu$ \acrshort{cc}$1\pi^+$ interactions.}
 \acrlong{cc} muon- and electron-neutrino with one positively-charged pion ($\nu_\mu$\acrshort{cc}$1\pi^+$ and $\nu_e$\acrshort{cc}$1\pi^+$) samples, as shown in \Cref{fig:event_spectra_t2k}. 
+
 %
-\begin{figure}[H]
-	\begin{minipage}[b]{.49\textwidth}
-			$\vcenter{\hbox{\includegraphics[width=\textwidth]
-            {figures/T2K_FHC1Rmu_2024_all2}}}%{figures/T2K_FHC1Rmu_2024_all}}}%{figures/T2K_FHC1Rmu_2024_logo}}}%{figures/T2K_FHC1Rmu_2024}}}%{figures/test_t2k_outputfile_SKEventRates_Plots_ErecModeOscChanBreakdown_FHC_1Rmu_2024.pdf}}}
-            $
-	\end{minipage}
-	\begin{minipage}[b]{.49\textwidth}
-		$\vcenter{\hbox{\includegraphics[width=\textwidth]
-        {figures/T2K_RHC1Rmu_2024_noLogo_noLegend2.pdf}}}$
-        %{figures/T2K_RHC1Rmu_2024_noLogo_noLegend.pdf}}}$
-        %{figures/T2K_RHC1Rmu_2024_noLegend.pdf}}}$
-        %{figures/T2K_RHC1Rmu_2024.pdf}}}$
-	\end{minipage}
-	\vskip\baselineskip
-	\begin{minipage}[b]{.49\textwidth}
-			$\vcenter{\hbox{\includegraphics[width=\textwidth]%
-            {figures/T2K_FHCnumuCC1pi_20242.pdf}}}$
-            %{figures/T2K_FHCnumuCC1pi_2024.pdf}}}$
-	\end{minipage}
-	\begin{minipage}[b]{.49\textwidth}
-		$\vcenter{\hbox{\includegraphics[width=\textwidth]
-        {figures/T2K_FHCnueCC1pi_20242.pdf}}}$
-        %{figures/T2K_FHCnueCC1pi_2024.pdf}}}$
-	\end{minipage}
-	\vskip\baselineskip
-	\begin{minipage}[b]{.49\textwidth}
-		$\vcenter{\hbox{\includegraphics[width=\textwidth]
-        {figures/T2K_FHC1Re_2024_all2.pdf}}}%
-        %{figures/T2K_FHC1Re_2024_all.pdf}}}%{figures/T2K_FHC1Re_2024.pdf}}}%
-        ]$
-	\end{minipage}
-	\begin{minipage}[b]{.49\textwidth}
-		$\vcenter{\hbox{\includegraphics[width=\textwidth]
-        {figures/T2K_RHC1Re_2024_noLogo2.pdf}}}$
-        %{figures/T2K_RHC1Re_2024_noLogo.pdf}}}$
-        %{figures/T2K_RHC1Re_2024.pdf}}}$
-	\end{minipage}
-	\caption{\acrshort{mach3} event spectra predictions broken down by interaction modes at the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}). The samples are labeled by their interaction topology. Write out interaction modes acrshort{ccqe}, acrshort cc res etc..}
-	\label{fig:event_spectra_t2k}
-\end{figure}
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1.\textwidth]{figures/QD_Analysis/RecoNeutrinoEnergy_ByOscChannel_DividedByBinWidth.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{rec}$ for the Super-Kamiokande Samples (split into Oscillation Channels).]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{rec}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{rec}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples. The data from \acrshort{t2k} runs $1$ to $11$ are shown as gray dots with horizontal bars showing the bin width and vertical bars the statistical fluctuation. The \acrshort{mc} prediction is shown as a split into oscillation channels for the oscillation parameters as defined in T2K Set A ($\Gamma = 5.0 \times 10^{-15} \ \mathrm{eV}$). \Cref{fig:RecoNeutrinoEnergy_ByOscChannel_Counts} presents the same data undivided by bin width.}
+    \label{fig:RecoNeutrinoEnergy_ByOscChannel_DividedByBinWidth}
+    \end{figure}
 %
-The \acrshort{t2k} \acrshort{fd} called Super-Kamiokande is a Cherenkov detector filled with Gadolinium-doped water. The event selection is performed by identifying Cherenkov rings produced by muons or electrons originating from $\nu_\mu$ or $\nu_e$-like interactions inside Super-Kamiokande. A \acrshort{fhc} $\nu_\mu$ \acrshort{cc}$1\pi^+$ event is identified by a primary muon ring which has a decay electron and also has an additional decay electron from the pion decay. The \acrshort{fhc} $\nu_e$ \acrshort{cc}$1\pi^+$ event looks for an associated primary electron ring with an associated decay electron from the invisible pion decay. %{\color{red} More details on samples?}
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1.\textwidth]{figures/QD_Analysis/RecoNeutrinoEnergy_ByIntChannel_DividedByBinWidth.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{rec}$ for the Super-Kamiokande Samples (split into Interaction Channels).]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{rec}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{rec}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples. The data from \acrshort{t2k} runs $1$ to $11$ are shown as gray dots with horizontal bars showing the bin width and vertical bars the statistical fluctuation. The \acrshort{mc} prediction is shown broken down into interaction modes for the oscillation parameters as defined in T2K Set A ($\Gamma = 5.0 \times 10^{-15} \ \mathrm{eV}$). \Cref{fig:RecoNeutrinoEnergy_ByIntChannel_Counts} presents the same data undivided by bin width.}
+    \label{fig:RecoNeutrinoEnergy_ByIntChannel_DividedByBinWidth}
+    \end{figure}
+%
+
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1.\textwidth]{figures/QD_Analysis/T2K_A1_A2_side-by-side_comparison.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{true}$ for the Super-Kamiokande Samples (split into Oscillation Channels): Effect of Quantum Decoherence.]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{true}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{true}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples: Effect of Quantum Decoherence. The \acrshort{mc} prediction is shown broken down into oscillation channels for the oscillation parameters as defined in T2K Set A with $\Gamma = 0.0 \ \mathrm{eV}$ (left) and $\Gamma = 5.0 \times 10^{-15} \ \mathrm{eV}$ (right).}
+    \label{fig:T2K_A1_A2_side-by-side_comparison}
+    \end{figure}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1.\textwidth]{figures/QD_Analysis/T2K_B3_B4_side-by-side_comparison.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{true}$ for the Super-Kamiokande Samples (split into Oscillation Channels): Effect of Quantum Decoherence.]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{true}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{true}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples: Effect of Quantum Decoherence. The \acrshort{mc} prediction is shown broken down into oscillation channels for the oscillation parameters as defined in T2K Set B with $\Gamma = 0.0 \ \mathrm{eV}$ (left) and $\Gamma = 5.0 \times 10^{-15} \ \mathrm{eV}$ (right).}
+    \label{fig:T2K_B3_B4_side-by-side_comparison}
+    \end{figure}
+%
+
+%
+\begin{landscape}
+    \begin{figure}[p]
+	\centering
+	\includegraphics[height=0.8\textheight]
+    {figures/QD_Analysis/T2K_A1_A2_B3_B4_side-by-side_comparison.pdf}
+    \caption[]{.}
+	\label{fig:T2K_A1_A2_B3_B4_side-by-side_comparison}
+    \end{figure}
+%
+\end{landscape}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.9\textwidth]
+    {figures/QD_Analysis/RecoNeutrinoEnergy_total_ratio_counts.pdf}
+    %{figures/QD_Analysis/RecoNeutrinoEnergy_total_counts.pdf}
+	\caption[Events over $E_\nu^\mathrm{rec}$ for the Super-Kamiokande Samples.]{Events per bin as a function of reconstructed neutrino energy $E_\nu^\mathrm{rec}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples for four sets of oscillation parameters T2K Set A (with $\Gamma = 0$, solid blue; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed blue) and T2K Set B (with $\Gamma = 0$, solid brown; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed brown). \Cref{fig:RecoNeutrinoEnergy_total_density} presents the same data divided by bin width.}
+    \label{fig:RecoNeutrinoEnergy_total_counts}
+    \end{figure}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=1.\textwidth]{figures/QD_Analysis/RecoNeutrinoEnergy_total_counts_horizontal.pdf}
+	\caption[Events over $E_\nu^\mathrm{rec}$ for the Super-Kamiokande Samples.]{Events per bin as a function of reconstructed neutrino energy $E_\nu^\mathrm{rec}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples for four sets of oscillation parameters T2K Set A (with $\Gamma = 0$, solid blue; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed blue) and T2K Set B (with $\Gamma = 0$, solid brown; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed brown). \Cref{fig:RecoNeutrinoEnergy_total_density} presents the same data divided by bin width.}
+    \label{fig:RecoNeutrinoEnergy_total_counts_horizontal}
+    \end{figure}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figures/QD_Analysis/TrueNeutrinoEnergy_total_ratio_counts.pdf}%{figures/QD_Analysis/TrueNeutrinoEnergy_total_counts.pdf}
+	\caption[Events over $E_\nu^\mathrm{true}$ for the Super-Kamiokande Samples.]{Events per bin as a function of reconstructed neutrino energy $E_\nu^\mathrm{true}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples for four sets of oscillation parameters T2K Set A (with $\Gamma = 0$, solid blue; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed blue) and T2K Set B (with $\Gamma = 0$, solid brown; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed brown). \Cref{fig:TrueNeutrinoEnergy_total_density} presents the same data divided by bin width.}
+    \label{fig:TrueNeutrinoEnergy_total_counts}
+    \end{figure}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=.9\textwidth]{figures/QD_Analysis/RecoNeutrinoEnergy_total_ratio_density.pdf}%{figures/QD_Analysis/RecoNeutrinoEnergy_total_density.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{rec}$ for the Super-Kamiokande Samples.]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{rec}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{rec}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples for four sets of oscillation parameters T2K Set A (with $\Gamma = 0$, solid blue; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed blue) and T2K Set B (with $\Gamma = 0$, solid brown; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed brown). \Cref{fig:RecoNeutrinoEnergy_total_counts} presents the same data undivided by bin width.}
+    \label{fig:RecoNeutrinoEnergy_total_density}
+    \end{figure}
+%
+
+%
+    \begin{figure}[hbt]
+	\centering
+	\includegraphics[width=.9\textwidth]{figures/QD_Analysis/TrueNeutrinoEnergy_total_ratio_density.pdf}%{figures/QD_Analysis/TrueNeutrinoEnergy_total_density.pdf}
+	\caption[Bin-Averaged Event Densities over $E_\nu^\mathrm{true}$ for the Super-Kamiokande Samples.]{Bin-averaged event densities $N / \Delta E_\nu^\mathrm{true}$ as a function of reconstructed neutrino energy $E_\nu^\mathrm{true}$ for the Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) samples for four sets of oscillation parameters T2K Set A (with $\Gamma = 0$, solid blue; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed blue) and T2K Set B (with $\Gamma = 0$, solid brown; $\Gamma = 5.0 \times 10^{-15}\ \text{eV}$, dashed brown). \Cref{fig:TrueNeutrinoEnergy_total_counts} presents the same data undivided by bin width.}
+    \label{fig:TrueNeutrinoEnergy_total_density}
+    \end{figure}
+%
+
+
+The \acrshort{t2k} \acrshort{fd} called Super-Kamiokande (\acrshort{t2k} \acrshort{fd}) is a Cherenkov detector filled with Gadolinium-doped water. The event selection is performed by identifying Cherenkov rings produced by muons or electrons originating from $\nu_\mu$ or $\nu_e$-like interactions inside Super-Kamiokande. A \acrshort{fhc} $\nu_\mu$ \acrshort{cc}$1\pi^+$ event is identified by a primary muon ring which has a decay electron and also has an additional decay electron from the pion decay. The \acrshort{fhc} $\nu_e$ \acrshort{cc}$1\pi^+$ event looks for an associated primary electron ring with an associated decay electron from the invisible pion decay. %{\color{red} More details on samples?}
 
 After $\nu_\mu$- and $\nu_e$-interactions are simulated and reconstructed in the \acrshort{t2k} \acrshort{fd}, there is a matching of kinematics between a T$2$K 
 \acrshort{mc} and an \acrshort{sk} atmospheric muon event and generating \acrshort{mc} charged pion rings. Neutrino interactions are then classified via a maximum likelihood fitter called FitQUN. An event is selected if it passes flavour classification and fiducial volume cuts. Most \acrshort{t2k} samples are then binned in both reconstructed neutrino energy $E_\nu^\text{rec}$ and lepton direction \cite{t2k-tech-342_numu,t2k-tech-389_nue}.%{\color{red} What do I cite here (as this is described in a T2K tech-notes)?}
